@@ -117,14 +117,17 @@ class App extends Component {
     if (firstApi && secondApi){
       firstTitle = firstApi.info.title != null ? firstApi.info.title : 'title missing';
       firstLogo = firstApi.info['x-logo'].url != null ? firstApi.info['x-logo'].url : '';
-      firstUrl = firstApi.info['x-origin'].url != null ? firstApi.info['x-origin'].url : '';
+      firstUrl = firstApi.info['x-origin'][0].url != null ? firstApi.info['x-origin'][0].url : '';
+      
       firstDescription = firstApi.info.description != null ? firstApi.info.description : 'description missing';
 
       secondTitle = secondApi.info.title != null ? secondApi.info.title : 'title missing';
       secondLogo = secondApi.info['x-logo'].url != null ? secondApi.info['x-logo'].url : '';
-      secondUrl = secondApi.info['x-origin'].url != null ? secondApi.info['x-origin'].url : '';
+      secondUrl = secondApi.info['x-origin'][0].url != null ? secondApi.info['x-origin'][0].url : '';
       secondDescription = secondApi.info.description != null ? secondApi.info.description : 'description missing';
     }
+
+    // console.log(firstUrl, firstApi.info['x-origin'][0].url, firstApi.info['x-origin']);
 
 
     this.setState({
